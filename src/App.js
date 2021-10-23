@@ -8,6 +8,7 @@ function App() {
     let interval;
 
     function handleSubmit(e) {
+        setDisable(disable = true);
         e.preventDefault();
         interval = setInterval(() => {
             setTimer((timer) = timer - 1);
@@ -17,6 +18,7 @@ function App() {
 
     useEffect(() => {
         if (timer === 0) {
+            setDisable(disable = false);
             clearInterval(interval);
         }
     }, [timer]);
