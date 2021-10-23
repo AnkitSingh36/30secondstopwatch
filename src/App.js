@@ -16,18 +16,14 @@ function App() {
     }
 
     useEffect(() => {
-        if (timer >= 1) {
-            //setDisable((disable) = true);
-        }
         if (timer === 0) {
-            //setDisable((disable) = false);
             clearInterval(interval);
         }
     }, [timer]);
 
     function reset() {
+        clearInterval(interval);
         setTimer((timer) = 30);
-        return clearInterval(interval);
     }
 
   return (
